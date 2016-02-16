@@ -1,0 +1,22 @@
+{
+  "name": "@pogoda/basic-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skalagi/pogoda-basic-api.git"
+  },
+  "author": "Damian Martyniak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skalagi/pogoda-basic-api/issues"
+  },
+  "homepage": "https://github.com/skalagi/pogoda-basic-api#readme",
+  "dependencies": {
+    "eventemitter3": "^1.1.1"
+  }
+}
