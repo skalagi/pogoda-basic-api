@@ -49,6 +49,11 @@ class Basic extends eventEmiter {
     */
   handleRequest(api) {
     if (api) {
+      const next = api.time.next.value;
+      const isOffline = next === "Offline";
+
+      if (isOffline) this.emit('offline');
+
       /**
         * api was updated
         * @event Basic#updated
@@ -61,7 +66,7 @@ class Basic extends eventEmiter {
         * @event Basic#nextUpdate
         * @param {Number} time to next update.
         */
-      this.emit('nextUpdate', api.time.next.value);
+      this.emit('nextUpdate', isOffline ? 10000 : next);
 
       this.sendRequest(api.time.next.value * 1000);
     } else if (!this.time) this.sendRequest(this.requests > 10 ? 5000 : 0);
