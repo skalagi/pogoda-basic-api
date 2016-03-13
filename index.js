@@ -68,7 +68,7 @@ class Basic extends eventEmiter {
         */
       this.emit('nextUpdate', isOffline ? 10000 : next);
 
-      this.sendRequest(api.time.next.value * 1000);
+      this.sendRequest(isOffline ? 10000 : next * 1000);
     } else if (!this.time) this.sendRequest(this.requests > 10 ? 5000 : 0);
 
     if (this.requests === 10)
